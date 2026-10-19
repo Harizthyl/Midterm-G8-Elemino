@@ -3,6 +3,7 @@ import Sidebar from "./Components/Sidebar";
 import Header from "./Components/Header";
 import StatCard from "./Components/StatCard";
 import Guide from "./Components/Guide";
+import Feedback from "./Components/Feedback";
 
 function App() {
   const [read, setRead] = useState(0);
@@ -16,7 +17,7 @@ function App() {
     setBookmarks(bookmarks + 1);
   }
 
-  function handleReset() {
+  function handleClear() {
     setRead(0);
     setBookmarks(0);
   }
@@ -42,10 +43,10 @@ function App() {
               Bookmark
             </button>
             <button
-              className="cursor-pointer rounded-lg border-2 border-[#5C4F4A] px-8 py-3 text-xl font-bold"
-              onClick={handleReset}
+              className="cursor-pointer rounded-lg border-2 border-[#EDE9E6] px-6 py-4 text-xl font-bold"
+              onClick={handleClear}
             >
-              Reset
+              Clear
             </button>
           </div>
         </div>
@@ -56,8 +57,8 @@ function App() {
         </div>
       </div>
 
-      <Guide/>
-
+      <Guide />
+      <Feedback />
     </div>
   );
 }
