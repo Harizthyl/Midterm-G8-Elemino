@@ -2,7 +2,7 @@ import { useState } from "react";
 import Sidebar from "./Components/Sidebar";
 import Header from "./Components/Header";
 import StatCard from "./Components/StatCard";
-import Section from "./Components/Section";
+import Guide from "./Components/Guide";
 
 function App() {
   const [read, setRead] = useState(0);
@@ -56,11 +56,8 @@ function App() {
         </div>
       </div>
 
-      <main className="px-20 pt-4">
-        <Section title="Create" description="Creates an empty Git repository in the current folder." command="git init"/>
-        <Section title="Rename" description="Renames the current branch to main" command="git branch -M main"/>
-        <Section title="Upload" description="Sends the main branch to the remote named origin." command="git push -u origin main"/>
-      </main>
+      <Guide/>
+
     </div>
   );
 }
