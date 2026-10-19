@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Sidebar from "./Components/Sidebar";
 import Header from "./Components/Header";
+import StatCard from "./Components/StatCard";
 
 function App() {
   const [read, setRead] = useState(0);
@@ -25,7 +26,7 @@ function App() {
 
       <div className="flex items-end justify-between px-20 pt-10">
         <div>
-          <Header/>
+          <Header />
           <div className="mt-6 flex gap-4">
             <button
               className="cursor-pointer rounded-lg bg-[#5C766D] px-8 py-3 text-xl font-bold text-[#EDE9E6]"
@@ -47,22 +48,19 @@ function App() {
             </button>
           </div>
         </div>
+
         <div className="flex gap-6">
-          <div className="w-48 rounded-xl border-2 border-[#5C4F4A] py-4 text-center">
-            <p className="text-4xl font-bold text-[#5C766D]">{read}</p>
-            <p className="mt-1 text-lg">Marked as read</p>
-          </div>
-          <div className="w-48 rounded-xl border-2 border-[#5C4F4A] py-4 text-center">
-            <p className="text-4xl font-bold text-[#5C766D]">{bookmarks}</p>
-            <p className="mt-1 text-lg">Bookmarks</p>
-          </div>
+          <StatCard value={read} label="Marked as read" />
+          <StatCard value={bookmarks} label="Bookmarks" />
         </div>
       </div>
 
       <main className="px-20 pt-4">
         <section className="border-t border-[#C9996B] py-3">
           <h3 className="text-2xl font-bold">Create</h3>
-          <p className="mt-1 text-xl">Creates an empty Git repository in the current folder.</p>
+          <p className="mt-1 text-xl">
+            Creates an empty Git repository in the current folder.
+          </p>
           <code className="mt-3 block rounded-lg bg-[#5C766D] px-6 py-2 font-mono text-xl text-[#EDE9E6]">
             git init
           </code>
@@ -76,7 +74,9 @@ function App() {
         </section>
         <section className="border-t border-[#C9996B] py-3">
           <h3 className="text-2xl font-bold">Upload</h3>
-          <p className="mt-1 text-xl">Sends the main branch to the remote named origin.</p>
+          <p className="mt-1 text-xl">
+            Sends the main branch to the remote named origin.
+          </p>
           <code className="mt-3 block rounded-lg bg-[#5C766D] px-6 py-2 font-mono text-xl text-[#EDE9E6]">
             git push -u origin main
           </code>
